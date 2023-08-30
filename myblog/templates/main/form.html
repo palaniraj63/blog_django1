@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content%}
+
+<style>
+    .block{
+        display: block;
+    }
+</style>
+
+<form>
+    {% for field in form %}
+       <label for="{{  }}"> {{ field.name }}</label>
+       <input name="{{ field.name }}" class="block" id="{{field.id_For_label}}">
+    {% endfor %}
+</form>
+{% endblock %}
