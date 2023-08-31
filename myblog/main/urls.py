@@ -3,7 +3,7 @@ from main import views
 urlpatterns=[
    
     path('',views.index,name= 'index'),
-    path('atlas ',views.Atlas.as_view())
+    path('atlas',views.Atlas.as_view()),
     path('forms',views.formchecker,name= 'formchecker'),
     path('article/<int:pk>',views.article, name='get_article'),
     path('author/<int:pk>',views.author, name='get_author'),

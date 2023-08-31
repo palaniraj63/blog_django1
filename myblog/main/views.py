@@ -10,7 +10,7 @@ from main import forms #this is for importing forms if u have any
 
 #these all should come in controllers.py mostly 
 
-class Atlas(view):
+class Atlas(View):
     def get(self,request):
         return HttpResponse("get request")
     def post(self,request):
