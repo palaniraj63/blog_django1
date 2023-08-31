@@ -1,5 +1,6 @@
 from django.shortcuts import render ,get_object_or_404 ,get_list_or_404
 from main import models
+from django.http import HttpResponse
 from django.http import Http404 
 from django.views import View
 
@@ -8,6 +9,12 @@ from main import forms #this is for importing forms if u have any
 # Create your views here.
 
 #these all should come in controllers.py mostly 
+
+class Atlas(view):
+    def get(self,request):
+        return HttpResponse("get request")
+    def post(self,request):
+        return HttpResponse("post request")
 def index(request):
     
     # latest_articles= models.Article.objects.all()[:10] #this is models it is saved as objectsin table and that is limit tp 10 #this  has str dunder set to title when we access in  html it will print the title 
