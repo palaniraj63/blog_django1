@@ -4,8 +4,8 @@ urlpatterns=[
    
     path('',views.index,name= 'index'),
     path('atlas',views.Atlas.as_view()),
-    path('college/<int:pk>',views.CollegeDetail.as_view(),name= "college" ),
-    path('college',views.CollegeList.as_view()),
+    path('college/<int:pk>',views.CollegeDetail.as_view(),name= "college_detail" ),
+    path('college',views.CollegeList.as_view(), name='college_list'),
     path('forms',views.formchecker,name= 'formchecker'),
     path('article/<int:pk>',views.article, name='get_article'),
     path('author/<int:pk>',views.author, name='get_author'),
