@@ -1,0 +1,13 @@
+{% extends 'main/base.html'%}
+{% block content %}
+ <h1> college view </h1>
+
+   Name: {{ object.name }}  <br>
+    
+   students:
+    <ul>
+        {% for student in object.student_set.all %}
+          <li> {{ student.name}} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
