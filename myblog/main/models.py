@@ -18,6 +18,16 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
-    
+class Student(models.Model):  
+    name=models.CharField(max_length=256)
+    roll_number=models.IntegerField(unique=True)
+    college=models.ForeignKey('college',on_delete=models.CASCADE)    
+    def __str__(self):
+        return self.name
+
+class College(models.Model):
+    name=models.CharField(max_length=256)
+    def __str__(self):
+        return self.name
     
     

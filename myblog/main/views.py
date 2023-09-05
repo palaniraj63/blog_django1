@@ -1,13 +1,17 @@
 from django.shortcuts import render ,get_object_or_404 ,get_list_or_404
 from main import models
+from django.http import HttpResponse
 from django.http import Http404 
 from django.views import View
-
+from django.views.generic import (DetailView,ListView,UpdateView,DeleteView,CreateView)
+from main import models 
+from .models import College
 from main import forms #this is for importing forms if u have any 
 # from django import forms
 # Create your views here.
 
 #these all should come in controllers.py mostly 
+
 def index(request):
     
     # latest_articles= models.Article.objects.all()[:10] #this is models it is saved as objectsin table and that is limit tp 10 #this  has str dunder set to title when we access in  html it will print the title 
@@ -57,3 +61,26 @@ def create_article(request):
 def formchecker(request):
     context={ "form" : forms.ExampleForm()}
     return render(request,'main/form.html',context)
+
+#generic views 
+
+
+class Atlas(View):
+    def get(self,request):
+        return HttpResponse("get request")
+    def post(self,request):
+        return HttpResponse("post request")
+    
+class CollegeDetail(DetailView):
+    model=models.College
+    template_name='main/college_detail.html'
+    
+class CollegeList(ListView):
+    
+    model=models.College
+    template_name='main/college_list.html'
+    context_object_name="colleges"
+    
+  
+    
+    

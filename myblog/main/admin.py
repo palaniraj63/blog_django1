@@ -3,4 +3,6 @@ from main import models
 # Register your models here.
 
 admin.site.register([models.Author,
-                     models.Article])
+                     models.Article,
+                     models.Student,
+                     models.College])
